@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""></script>
     <title>BNP Paribas</title>
 </head>
 <body>
+    <header>
+    <div class="navbar">
     <nav>
+        <img src="./src/logo-banque.svg" alt="">
         <ul>
             <li><a>nos agence</a></li>
             <li>rencontrons-nous</li>
@@ -15,5 +25,20 @@
             <li><span>FR</span></li>
         </ul>
     </nav>
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+    </div>
+</header>
+    <div class="test">
+    </div>
+    <div class="test"></div>
+    <div class="test"></div>
+    <div class="map-container">
+    <div id="map"></div>
+  </div>
+    <div class="test"></div>
+    <script src="main.js"></script>
+    
 </body>
 </html>
