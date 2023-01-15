@@ -1,96 +1,116 @@
-*,*::after,*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-    user-select: none;
-    -webkit-tap-highlight-color:transparent;
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
-nav img {
-    width: 200px;
+
+:root {
+  --bg-body: #121212;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 body {
-    background-color:white;
+  background-color: var(--bg-body);
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+
+  scroll-snap-align: start;
+}
+
+nav img {
+  width: 200px;
 }
 nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    align-items: center;
-    border-radius:  7px 7px 0px 0px;
-    padding: 6px;
-    margin-top: 2rem;
-    width: 100%;
-    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.247);
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  border-radius: 7px 7px 0px 0px;
+  padding: 6px;
+  margin-top: 2rem;
+  width: 100%;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.247);
 }
 nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 25px;
-    font-size: 1em;
-    font-weight: 550;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 25px;
+  font-size: 1em;
+  font-weight: 550;
 }
 .navbar {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-
-
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
 .progress-container {
-    width: 100%;
-    height: 8px;
+  width: 100%;
+  height: 8px;
 }
 .progress-bar {
-    height: 5px;
-    background: #04AA6D;
-    width: 0%;
-    border-radius: 0px 0px 4px 4px;
-  }
-  .test {
-    height: 80vw;
-  }
-  header {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  #map {
-    height:500px;
-    width: 80%;
-    justify-content: center;
-  }
-  .map-container {
-    display: flex;
-    justify-content: center;
-  }
- @media only screen and (max-widh:700px) {
+  height: 5px;
+  background: #04aa6d;
+  width: 0%;
+  border-radius: 0px 0px 4px 4px;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#map {
+  height: 50%;
+  width: 80%;
+  justify-content: center;
+}
+.map-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-widh: 700px) {
   .navbar {
     display: none;
   }
- }
+}
 
- footer {
+footer {
   width: 100%;
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
   background: linear-gradient(to right, rgb(9, 126, 28), rgb(1, 20, 6));
   color: #fff;
   padding: 100px 0 30px;
   border-top-left-radius: 125px;
   font-size: 13px;
   line-height: 20px;
+
+  scroll-snap-align: start;
 }
 
-.row{
+.row {
   width: 85%;
   margin: auto;
   display: flex;
@@ -99,17 +119,17 @@ nav ul {
   justify-content: space-between;
 }
 
-.col{
+.col {
   flex-basis: 20%;
   padding: 10px;
 }
 
-.col:nth-child(2), .col:nth-child(3){
+.col:nth-child(2),
+.col:nth-child(3) {
   flex-basis: 15%;
 }
 
-
-.logo{
+.logo {
   width: 200px;
   margin-bottom: 30px;
   color: #fff;
@@ -120,7 +140,6 @@ nav ul {
   margin-bottom: 40px;
   position: relative;
 }
-
 
 ul li {
   list-style: none;
@@ -143,7 +162,7 @@ form {
 
 form .fa-regular {
   font-size: 18px;
-margin-right: 10px;
+  margin-right: 10px;
 }
 
 form input {
@@ -161,7 +180,7 @@ form button {
   cursor: pointer;
 }
 
-form button .fas{
+form button .fas {
   font-size: 16px;
   color: #ccc;
 }
@@ -179,7 +198,7 @@ form button .fas{
   cursor: pointer;
 }
 
-hr{
+hr {
   width: 90%;
   border: 0;
   border-bottom: 1px solid #ccc;
@@ -213,24 +232,25 @@ hr{
 }
 
 @keyframes moving {
-  0%{
-      left: -20px;
+  0% {
+    left: -20px;
   }
-  100%{
-      left: 100%;
+  100% {
+    left: 100%;
   }
 }
 
 @media (max-width: 700px) {
   footer {
-      bottom: unset;
+    bottom: unset;
   }
 
-  .col{
-      flex-basis: 100%;
+  .col {
+    flex-basis: 100%;
   }
-  
-  .col:nth-child(2), .col:nth-child(3){
-      flex-basis: 100%;
+
+  .col:nth-child(2),
+  .col:nth-child(3) {
+    flex-basis: 100%;
   }
 }
