@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
+
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -20,7 +22,7 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Jura, Arial, Helvetica, sans-serif;
   background-color: var(--bg-body);
   color: white;
 }
@@ -313,11 +315,69 @@ hr {
   gap: 2rem;
 }
 
-// *** Values *** //
+.values-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
 
-#v h2 {
+.values-section h2 span,
+.values-section h3 {
+  font-weight: 400;
+}
+
+.values-section h2 {
+  font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem);
+}
+
+.values-section h3 {
+  font-size: clamp(1.125rem, 2vw + 1rem, 2.125rem);
+}
+
+.values-section h3 span {
+  color: #ff6900;
+}
+
+.values-container {
   width: 100%;
   display: flex;
-  color: red;
-  background-color: red;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.value {
+  border: solid 2px #04aa6d;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.value svg {
+  width: 20%;
+}
+
+@media screen and (max-width: 970px) {
+  .values-section {
+    padding-top: 6rem;
+    height: auto;
+  }
+}
+
+.testimonials .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20rem;
+  text-align: center;
 }
