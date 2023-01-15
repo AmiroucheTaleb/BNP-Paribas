@@ -47,3 +47,49 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
 });
+
+// **** Services functions **** //
+const servicesContainer = document.querySelector(".services-container");
+const clientTypeBtn = Array.from(
+  document.querySelectorAll(".client-type_button")
+);
+
+clientTypeBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const btnIndex = clientTypeBtn.indexOf(btn);
+    const newClientTypeBtn = Array.from(clientTypeBtn);
+
+    newClientTypeBtn.splice(btnIndex, 1);
+
+    btn.parentElement.setAttribute("data-clicked", true);
+
+    newClientTypeBtn.forEach((e) => {
+      e.parentElement.classList.add("fade-out");
+
+      e.parentElement.onanimationend = () => {};
+      if (btn.innerText === "Professionels") {
+        btn.parentElement.classList.add("translate-one");
+      } else if (btn.innerText === "Entreprises") {
+        btn.parentElement.classList.add("translate-two");
+      } else if (btn.innerText === "Particuliers") {
+        e.parentElement.style.display = "none";
+      }
+    });
+    if (btn.innerText === "Professionels" || btn.innerText === "Entreprises") {
+      btn.parentElement.onanimationend = () => {
+        newClientTypeBtn.forEach((e) => {
+          e.parentElement.style.display = "none";
+          btn.parentElement.classList.remove("translate-one", "translate-two");
+          servicesContainer.style.display = "grid";
+          servicesContainer.classList.add("fade-in");
+        });
+      };
+    } else if (btn.innerText === "Particuliers") {
+      newClientTypeBtn.forEach((e) => {
+        e.parentElement.style.display = "none";
+        servicesContainer.style.display = "grid";
+        servicesContainer.classList.add("fade-in");
+      });
+    }
+  });
+});
