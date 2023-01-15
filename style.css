@@ -35,7 +35,7 @@ nav ul {
 .navbar {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     justify-content: center;
     position: fixed;
     top: 0;
@@ -71,4 +71,8 @@ nav ul {
     display: flex;
     justify-content: center;
   }
- 
+ @media only screen and (max-widh:700px) {
+  .navbar {
+    display: none;
+  }
+ }

@@ -12,5 +12,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var marker = L.marker([36.716103, 3.204905]).addTo(map);
+var marker = L.marker([36.716103, 3.204905] ).addTo(map);
 marker.bindPopup("<b>Hello world!</b><br>I am a popup.").closePopup();
+var marker = L.marker([35.711202, -0.596015] ).addTo(map);
+marker.bindPopup("<b>Centre d&rsquo;Affaire Oran</b>.").closePopup();
