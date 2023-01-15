@@ -50,6 +50,8 @@ const swiper = new Swiper(".swiper", {
 
 // **** Services functions **** //
 const servicesContainer = document.querySelector(".services-container");
+const service = document.querySelectorAll(".service");
+const btnBack = document.querySelector(".back");
 const clientTypeBtn = Array.from(
   document.querySelectorAll(".client-type_button")
 );
@@ -91,5 +93,21 @@ clientTypeBtn.forEach((btn) => {
         servicesContainer.classList.add("fade-in");
       });
     }
+    servicesContainer.onanimationend = () => {
+      service.forEach((service) => {
+        const serviceAttr = service.getAttributeNames();
+        console.log(serviceAttr, btn.innerText);
+        if (serviceAttr.includes(btn.innerText.toLowerCase())) {
+          console.log(btn.innerText);
+          service.style.display = "grid";
+        }
+      });
+    };
+
+    btnBack.style.display = "grid";
+    btnBack.addEventListener("click", () => {
+      window.location.href = "#services";
+      window.location.reload();
+    });
   });
 });

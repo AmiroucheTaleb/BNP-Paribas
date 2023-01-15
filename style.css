@@ -331,6 +331,24 @@ hr {
   gap: 2rem;
   padding-inline: 2rem;
   padding-top: 7rem;
+
+  position: relative;
+}
+
+.services .back {
+  cursor: pointer;
+  padding: 1rem;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 80px;
+  display: none;
+}
+
+.services .back svg {
+  fill: #ff6900;
+  width: 20px;
 }
 
 .client-type {
@@ -360,15 +378,15 @@ hr {
   transition: all 1s ease-in-out;
 }
 
-.client-type:first-child::before {
+.client-type:nth-child(2)::before {
   background-image: url("./src/jonathan-borba-zW4i9Q6CdY0-unsplash.jpg");
 }
 
-.client-type:nth-child(2)::before {
+.client-type:nth-child(3)::before {
   background-image: url("./src/pro_fr.jpg");
 }
 
-.client-type:nth-child(3)::before {
+.client-type:nth-child(4)::before {
   background-image: url("./src/jonathan-borba-zW4i9Q6CdY0-unsplash.jpg");
 }
 
@@ -445,7 +463,7 @@ hr {
 .service {
   width: 100%;
   height: 50%;
-  display: grid;
+  display: none;
   place-items: center;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
@@ -606,13 +624,24 @@ hr {
 }
 
 /* *** Testimonials ***  */
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonials .swiper {
+  height: 50%;
+}
 
 .testimonials .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20rem;
+  padding: 10rem;
   text-align: center;
 }
 
@@ -623,3 +652,9 @@ hr {
 .testimonials .swiper-slide blockquote span {
   font-size: 2rem;
 }
+
+@media only screen and (max-width: 750px) {
+  .testimonials .swiper-slide {
+    padding: 4rem;
+  }
+} ;
