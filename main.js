@@ -27,21 +27,14 @@ var marker = L.marker([35.711202, -0.596015]).addTo(map);
 marker.bindPopup("<b>Centre d&rsquo;Affaire Oran</b>.").closePopup();
 
 // *** Swiper functions *** //
-
-import Swiper from "swiper";
-import "swiper/css/bundle";
-
-// const swiper = new Swiper();
-
 const swiper = new Swiper(".swiper", {
   // Optional parameters
-  // direction: 'vertical',
   loop: true,
 
   // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
+  // pagination: {
+  //   el: ".swiper-pagination",
+  // },
 
   // Navigation arrows
   navigation: {
