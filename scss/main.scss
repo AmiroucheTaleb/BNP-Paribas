@@ -1,16 +1,11 @@
-@import "abstracts/variables";
-@import "abstracts/mixins";
-@import "abstracts/functions";
+@use "./abstracts" as *;
 
-@import "vendors/normalize";
+@use "./vendors" as *;
 
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@use "./base" as *;
 
-// @import "components/...";
+// @use "./components" as *;
 
-// @import "layout/...";
+// @use "./layout" as *;
 
-@import "pages/home";
+@use "./pages" as *;
