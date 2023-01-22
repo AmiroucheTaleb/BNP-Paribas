@@ -1,0 +1,73 @@
+@use "../abstracts/index" as *;
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  font-size: 62.5%; // new 1rem = 10px
+
+  @media only screen and (max-width: 720px) {
+    scroll-snap-type: none;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $ff-primary;
+  font-size: 1.6rem;
+  color: $clr-text;
+  background-color: $clr-bg-light;
+  height: 100vh;
+  transition: background-color 1s;
+  display: grid;
+  place-items: center;
+}
+
+.light-mode {
+  background-color: $clr-bg-light;
+}
+
+.dark-mode {
+  background-color: $clr-bg-dark;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+
+  scroll-snap-align: start;
+}
+
+h2 {
+  font-size: clamp(3rem, 2vw + 1rem, 4rem);
+}
+
+h3 {
+  font-size: clamp(2rem, 1vw + 1rem, 3rem);
+}
+
+a {
+  text-decoration: none;
+  color: $clr-text;
+  display: inline-block;
+}
+
+select {
+  color: $clr-text;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  option {
+    background-color: white;
+  }
+}

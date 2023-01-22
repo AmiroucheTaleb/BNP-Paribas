@@ -1,0 +1,59 @@
+@use "../abstracts" as *;
+
+.testimonials {
+  width: 100%;
+  display: grid;
+
+  h2 {
+    place-self: center;
+    align-self: end;
+    margin-top: 12rem;
+
+    @media only screen and (max-width: 720px) {
+      margin-top: 0;
+    }
+  }
+
+  h3 span {
+    color: $clr-primary;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10rem;
+    padding-top: 0;
+    text-align: center;
+    font-size: clamp(1.2rem, 1.4vw + 1rem, 3rem);
+    span {
+      color: #ff6900;
+    }
+
+    h4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    blockquote span {
+      font-size: 6rem;
+    }
+    @media only screen and (max-width: 750px) {
+      padding: 4rem;
+      padding-top: 0;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $clr-secondary;
+  }
+}

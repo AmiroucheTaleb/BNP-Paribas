@@ -1,0 +1,52 @@
+@use "../abstracts" as *;
+
+.values {
+  h3 span {
+    color: $clr-secondary;
+  }
+
+  .values-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    border-radius: 10px;
+    background: $clr-bg-linear-one;
+    width: 90%;
+    height: 60%;
+  }
+
+  .values-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+
+    @media only screen and (max-width: 720px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .value {
+      width: 20%;
+      aspect-ratio: 1;
+      background: $clr-bg-linear-two;
+      padding: 2rem;
+      border-radius: 10px;
+
+      @media only screen and (max-width: 720px) {
+        width: fit-content;
+        height: auto;
+        display: grid;
+        place-items: center;
+      }
+
+      p {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

@@ -1,1 +1,35 @@
-$test: red;
+/*** color variables ***/
+
+$clr-bg-light: #fff;
+$clr-bg-dark: #121212;
+$clr-bg-linear-one: linear-gradient(
+  180deg,
+  rgba(217, 217, 217, 0.15) 0%,
+  rgba(217, 217, 217, 0) 100%
+);
+$clr-bg-linear-two: linear-gradient(
+  180deg,
+  rgba(217, 217, 217, 0.2) 0%,
+  rgba(217, 217, 217, 0) 100%
+);
+$clr-bg-overlay: rgba(0, 128, 83, 0.2);
+$clr-bg-header-dark: rgba(0, 0, 0, 0.4);
+$clr-primary: #00965f;
+$clr-secondary: #ff6900;
+$clr-text: #fff;
+
+/*** shadows variables ***/
+
+$shadow-header-dark: 0px 0px 18px 5px rgba(0, 150, 95, 0.31);
+
+/*** font-families variables ***/
+
+$ff-primary: "Jura", "sans-serif";
+
+/*** font-weights variables ***/
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;

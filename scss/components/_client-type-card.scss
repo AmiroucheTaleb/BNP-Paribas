@@ -1,0 +1,244 @@
+.services {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-inline: 2rem;
+  padding-top: 7rem;
+
+  position: relative;
+}
+
+.services .back {
+  cursor: pointer;
+  padding: 1rem;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 80px;
+  display: none;
+}
+
+.services .back svg {
+  fill: #ff6900;
+  width: 20px;
+}
+
+.client-type {
+  min-width: 200px;
+  width: 30%;
+  height: 90%;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+
+.client-type::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  filter: grayscale(1);
+  z-index: -1;
+
+  transition: all 1s ease-in-out;
+}
+
+.client-type:nth-child(2)::before {
+  background-image: url("../../assets/images/jonathan-borba-zW4i9Q6CdY0-unsplash-1.webp");
+}
+
+.client-type:nth-child(3)::before {
+  background-image: url("../../assets/images/jonathan-borba-zW4i9Q6CdY0-unsplash-1.webp");
+}
+
+.client-type:nth-child(4)::before {
+  background-image: url("../../assets/images/jonathan-borba-zW4i9Q6CdY0-unsplash-1.webp");
+}
+
+.client-type:hover,
+.client-type[data-clicked] {
+  scale: 1.02;
+}
+
+.client-type:hover::before,
+.client-type[data-clicked]::before {
+  filter: grayscale(0);
+}
+
+.client-type:hover button,
+.client-type[data-clicked] button {
+  background-color: rgba(255, 105, 0, 0.8);
+  color: white;
+  filter: blur(50);
+}
+
+.client-type button {
+  cursor: pointer;
+
+  padding: 1rem 1em;
+  font-size: clamp(0.125rem, 0.75vw + 1rem, 4rem);
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 150, 95, 0.8);
+  border: none;
+  filter: blur(200);
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+}
+
+.client-type button:hover,
+.client-type[data-clicked] button {
+  scale: 1.05;
+  gap: 1rem;
+}
+
+.client-type button:hover svg,
+.client-type[data-clicked] button svg {
+  width: 20px;
+  opacity: 1;
+  scale: 1;
+}
+
+.client-type button svg {
+  width: 0px;
+  opacity: 0;
+  scale: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.client-type button svg path {
+  fill: white;
+}
+
+.services-container {
+  width: 50%;
+  height: 90%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: none;
+
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.service {
+  width: 100%;
+  height: 50%;
+  display: none;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.service:hover {
+  scale: 1.05;
+}
+
+.service:hover a {
+  background-color: #ff6900;
+}
+
+.service a {
+  background-color: #04aa6d;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.fade-in {
+  animation: anim-fade-in 0.4s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: anim-fade-out 0.4s ease-in-out forwards;
+}
+
+.translate-one {
+  animation: anim-translateX-one 0.4s ease-in-out forwards;
+}
+
+.translate-two {
+  animation: anim-translateX-two 0.4s ease-in-out forwards;
+}
+
+@media only screen and (max-width: 730px) {
+  .services {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .client-type {
+    width: 100%;
+  }
+
+  .services-container {
+    width: 100%;
+  }
+
+  .translate-one {
+    animation: anim-translateY-one 0.4s ease-in-out forwards;
+  }
+
+  .translate-two {
+    animation: anim-translateY-two 0.4s ease-in-out forwards;
+  }
+}
+
+@keyframes anim-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes anim-translateX-one {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes anim-translateX-two {
+  to {
+    transform: translateX(-210%);
+  }
+}
+
+@keyframes anim-translateY-one {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes anim-translateY-two {
+  to {
+    transform: translateY(-210%);
+  }
+}
