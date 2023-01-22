@@ -12,19 +12,22 @@
 .map-right-content {
   min-width: 250px;
   width: 50%;
-  height: 50%;
-  background-color: red;
+  height: 60%;
+  background: $clr-bg-linear-one;
+  border-radius: 10px;
 }
 
 #map {
   height: 100%;
   width: 100%;
+  border-radius: 10px;
+
   justify-content: center;
 }
 .map-container {
   min-width: 250px;
   width: 50%;
-  height: 50%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
