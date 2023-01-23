@@ -1,0 +1,29 @@
+@keyframes slide-up {
+  to {
+    transform: translateY(-70%);
+  }
+}
+
+@keyframes slide-down {
+  to {
+    transform: translateY(70%);
+  }
+}
+
+@keyframes slide-up-reverse {
+  from {
+    transform: translateY(-70%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down-reverse {
+  from {
+    transform: translateY(70%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

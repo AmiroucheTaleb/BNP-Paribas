@@ -1,0 +1,160 @@
+@use "../abstracts/" as *;
+
+.devenir-client-body {
+  background-color: $clr-bg-dark;
+}
+
+.form-section {
+  background-color: $clr-bg-dark;
+  width: 100%;
+  height: 100vh;
+
+  padding-inline: 1rem;
+
+  display: grid;
+  grid-template-rows: 70% 30%;
+
+  overflow: hidden;
+
+  .up-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 0 50px 0px rgba(0, 134, 84, 0.4);
+
+    & img {
+      width: 30%;
+      opacity: 0.6;
+
+      @media only screen and (max-width: 720px) {
+        display: none;
+      }
+    }
+
+    & .open-form {
+      background-color: #fe790d;
+      color: white;
+      padding: 8px;
+      border-radius: 3px;
+      box-shadow: 0 0 15px 0#FE790D;
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      margin-bottom: 2rem;
+
+      &:hover {
+        scale: 1.2;
+        box-shadow: 0 0 35px 0#FE790D;
+      }
+    }
+
+    .up-content-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .up-content {
+        width: 50%;
+
+        @media only screen and (max-width: 720px) {
+          width: 100%;
+          text-align: center;
+        }
+
+        & h1 {
+          font-size: clamp(1.6rem, 1vw + 1rem, 3rem);
+        }
+
+        & p {
+          margin-top: 2rem;
+          font-size: clamp(1rem, 0.75vw + 1rem, 1.4rem);
+        }
+
+        & .btns-devenir-client {
+          & .btn-devenir-client {
+            color: #00965f;
+            border: none;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+              box-shadow: 0 0 35px 0 $clr-primary;
+            }
+          }
+          & .btn-devenir-client:nth-child(1) {
+            background-image: url("../../assets/images/btn-bg-devenir-client.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-right: 30px;
+            padding-left: 10px;
+            background-color: transparent;
+          }
+
+          & .btn-devenir-client:nth-child(2) {
+            background-image: url("../../assets/images/btn-bg-right.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-left: 20px;
+            padding-right: 10px;
+            background-color: transparent;
+            margin-left: -20px;
+          }
+        }
+      }
+    }
+  }
+
+  .down-container {
+    padding-top: 2rem;
+    border-radius: 50px 50px 0 0;
+    box-shadow: 0 0 50px 0px rgba(0, 134, 84, 0.4);
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media only screen and (max-width: 720px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .down-container-card {
+      h2 {
+        font-size: clamp(1.2rem, 0.75vw + 1rem, 2rem);
+      }
+
+      p {
+        padding-inline: 1rem;
+        font-size: clamp(0.75rem, 0.4vw + 1rem, 1.4rem);
+        text-align: center;
+      }
+    }
+  }
+}
+
+//   add animations classes
+.up-animation {
+  animation: slide-up 1s ease-in-out forwards;
+}
+
+.down-animation {
+  animation: slide-down 1s ease-in-out forwards;
+}
+
+.up-animation-reverse {
+  animation: slide-up-reverse 1s ease-in-out forwards;
+}
+
+.down-animation-reverse {
+  animation: slide-down-reverse 1s ease-in-out forwards;
+}
