@@ -1510,7 +1510,7 @@ hr {
   animation: slide-down-reverse 1s ease-in-out forwards;
 }
 
-.body-compte .header-compte {
+.body-compte #acces-compte-header {
   position: static;
   width: 100%;
   height: 100%;
