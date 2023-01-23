@@ -8,12 +8,18 @@ const enableDarkMode = () => {
   darkMode = localStorage.setItem("dark-mode", "enabled");
   body.classList.remove("light-mode");
   body.classList.add("dark-mode");
+  themeBtn.style = `
+    background-image: url("../../assets/images/dark-icon.svg");
+  `;
 };
 
 const disableDarkMode = () => {
   darkMode = localStorage.setItem("dark-mode", "disabled");
   body.classList.remove("dark-mode");
   body.classList.add("light-mode");
+  themeBtn.style = `
+  background-image: url("../../assets/images/light-icon.svg");
+`;
 };
 
 if (darkMode === "enabled" || darkMode === null) {
@@ -44,21 +50,11 @@ const swiper2 = new Swiper(".swiper2", {
   // Optional parameters
   loop: true,
 
-  // If we need pagination
-  // pagination: {
-  //   el: ".swiper-pagination",
-  // },
-
   // Navigation arrows
   navigation: {
     nextEl: ".swiper2 .swiper-button-next",
     prevEl: ".swiper2 .swiper-button-prev",
   },
-
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: ".swiper2 .swiper-scrollbar",
-  // },
 });
 
 // **** Services functions **** //

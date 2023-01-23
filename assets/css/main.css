@@ -374,8 +374,10 @@ body {
   background-color: #fff;
   color: black;
 }
-.light-mode svg path {
-  fill: black;
+.light-mode .values svg path,
+.light-mode .testimonials svg path,
+.light-mode .simuler svg path {
+  fill: #00965f;
 }
 .light-mode h1,
 .light-mode h2,
@@ -384,6 +386,21 @@ body {
 .light-mode p,
 .light-mode a {
   color: black;
+}
+.light-mode header a {
+  color: white;
+}
+.light-mode .news h2,
+.light-mode .news h3 {
+  color: white;
+}
+.light-mode .simuler a {
+  color: black;
+  background: none;
+  background-color: #ff6900;
+}
+.light-mode .simuler a:hover {
+  color: white;
 }
 .light-mode footer h2,
 .light-mode footer h3,
@@ -997,21 +1014,31 @@ header {
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 18px 5px rgba(0, 150, 95, 0.31);
   z-index: 100;
-  font-size: clamp(0.5rem, 0.5vw + 1rem, 2rem);
+  font-size: clamp(0.5rem, 0.3vw + 1rem, 2rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 720px) {
+  header {
+    padding-inline: 0.5rem;
+  }
 }
 header .logo-header {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   padding: 1rem;
 }
+@media only screen and (max-width: 720px) {
+  header .logo-header {
+    width: 50px;
+  }
+}
 header .logo-header svg {
-  width: clamp(70%, 50vw, 100%);
+  width: 100%;
 }
 header nav {
-  width: 20%;
+  width: fit-content;
 }
 header nav ul {
   width: 100%;
@@ -1019,21 +1046,32 @@ header nav ul {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   list-style: none;
 }
 header nav ul li > * {
   transition: all 0.4s ease-in-out;
 }
-header nav ul li > *:hover,
-header nav ul li > *:active,
-header nav ul li > *:focus {
+header nav ul li > *:hover, header nav ul li > *:active, header nav ul li > *:focus {
   cursor: pointer;
   color: #ff6900;
 }
 header nav ul li select option {
   appearance: none;
   color: #ff6900;
+}
+header nav ul li .link-devenir-client {
+  background-color: #fe790d;
+  color: white;
+  padding: 8px;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 0 #FE790D;
+  border: none;
+  cursor: pointer;
+}
+header nav ul li .link-devenir-client:hover {
+  scale: 1.2;
+  box-shadow: 0 0 35px 0 #FE790D;
 }
 header .header-right-content {
   display: flex;
@@ -1042,12 +1080,41 @@ header .header-right-content {
   align-items: center;
   gap: 0.5rem;
 }
+header .header-right-content select {
+  color: #ff6900;
+  cursor: pointer;
+}
+header .header-right-content .themeBtn {
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../../assets/images/dark-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  background-color: #00965f;
+  cursor: pointer;
+  border: none;
+  transition: all 0.4s ease-in-out;
+}
+@media only screen and (max-width: 720px) {
+  header .header-right-content .themeBtn {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+header .header-right-content .themeBtn:hover {
+  background-color: #ff6900;
+}
 header .header-right-content .search-container {
   position: relative;
   width: 4rem;
   height: 4rem;
   display: grid;
   place-items: center;
+  cursor: pointer;
+}
+header .header-right-content .search-container:hover input {
+  background-color: #ff6900;
 }
 @media only screen and (max-width: 720px) {
   header .header-right-content .search-container {
@@ -1062,6 +1129,7 @@ header .header-right-content .search-container input {
   background-color: #00965f;
   border: none;
   border-radius: 5px;
+  transition: all 0.4s ease-in-out;
 }
 header .header-right-content .search-container svg {
   width: 2.5rem;

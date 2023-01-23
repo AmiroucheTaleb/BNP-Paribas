@@ -11,46 +11,73 @@ header {
   background-color: $clr-bg-header-dark;
   box-shadow: $shadow-header-dark;
   z-index: 100;
-  font-size: clamp(0.5rem, 0.5vw + 1rem, 2rem);
+  font-size: clamp(0.5rem, 0.3vw + 1rem, 2rem);
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  @media only screen and (max-width: 720px) {
+    padding-inline: 0.5rem;
+  }
+
   .logo-header {
     background-color: transparentize($color: #fff, $amount: 0.4);
     border-radius: 10px;
     padding: 1rem;
-    svg {
-      width: clamp(70%, 50vw, 100%);
+
+    & {
+      @media only screen and (max-width: 720px) {
+        width: 50px;
+      }
+    }
+
+    & svg {
+      width: 100%;
     }
   }
 
-  nav {
-    width: 20%;
+  & nav {
+    width: fit-content;
 
-    ul {
+    & ul {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
+      gap: 1.5rem;
       list-style: none;
 
-      li > * {
+      & li > * {
         transition: all 0.4s ease-in-out;
       }
-      li > *:hover,
-      li > *:active,
-      li > *:focus {
+
+      & li > *:hover,
+      & li > *:active,
+      & li > *:focus {
         cursor: pointer;
         color: $clr-secondary;
       }
 
-      li select option {
+      & li select option {
         appearance: none;
         color: $clr-secondary;
+      }
+
+      & li .link-devenir-client {
+        background-color: #fe790d;
+        color: white;
+        padding: 8px;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 0#FE790D;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          scale: 1.2;
+          box-shadow: 0 0 35px 0#FE790D;
+        }
       }
     }
   }
@@ -61,12 +88,45 @@ header {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+
+    & select {
+      color: $clr-secondary;
+      cursor: pointer;
+    }
+
+    & .themeBtn {
+      width: 4rem;
+      height: 4rem;
+      background-image: url("../../assets/images/dark-icon.svg");
+      background-repeat: no-repeat;
+      background-size: 60%;
+      background-position: center;
+      background-color: $clr-primary;
+      cursor: pointer;
+      border: none;
+      transition: all 0.4s ease-in-out;
+
+      @media only screen and (max-width: 720px) {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &:hover {
+        background-color: $clr-secondary;
+      }
+    }
+
     .search-container {
       position: relative;
       width: 4rem;
       height: 4rem;
       display: grid;
       place-items: center;
+      cursor: pointer;
+
+      &:hover input {
+        background-color: $clr-secondary;
+      }
 
       @media only screen and (max-width: 720px) {
         width: 2rem;
@@ -80,6 +140,7 @@ header {
         background-color: $clr-primary;
         border: none;
         border-radius: 5px;
+        transition: all 0.4s ease-in-out;
       }
 
       svg {

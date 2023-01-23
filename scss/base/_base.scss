@@ -1,4 +1,4 @@
-@use "../abstracts/index" as *;
+@use "../abstracts/" as *;
 
 html {
   scroll-behavior: smooth;
@@ -34,8 +34,10 @@ body {
   background-color: $clr-bg-light;
   color: black;
 
-  svg path {
-    fill: black;
+  .values svg path,
+  .testimonials svg path,
+  .simuler svg path {
+    fill: $clr-primary;
   }
   h1,
   h2,
@@ -44,6 +46,27 @@ body {
   p,
   a {
     color: black;
+  }
+
+  header {
+    & a {
+      color: white;
+    }
+  }
+
+  .news h2,
+  .news h3 {
+    color: white;
+  }
+
+  .simuler a {
+    color: black;
+    background: none;
+    background-color: $clr-secondary;
+
+    &:hover {
+      color: white;
+    }
   }
 
   footer {
