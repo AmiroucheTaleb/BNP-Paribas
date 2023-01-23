@@ -1,0 +1,58 @@
+@use "../abstracts" as *;
+
+.selection {
+  h2 {
+    margin: 0;
+    align-self: end;
+  }
+
+  .selection-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    .selection-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+
+      background: $clr-bg-linear-one;
+
+      .selection-card-left {
+        width: 40%;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .selection-card-right {
+        h3 {
+          font-size: clamp(1rem, 0.75vw + 1rem, 1.6rem);
+        }
+
+        p {
+          font-size: clamp(1rem, 0.5vw + 1rem, 1.2rem);
+        }
+
+        a {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background-color: $clr-primary;
+          border-radius: 5px;
+          margin-top: 1rem;
+
+          &:hover {
+            background-color: $clr-secondary;
+          }
+        }
+      }
+    }
+  }
+}

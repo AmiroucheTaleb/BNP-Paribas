@@ -346,6 +346,25 @@ body {
 
 .light-mode {
   background-color: #fff;
+  color: black;
+}
+.light-mode svg path {
+  fill: black;
+}
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode p,
+.light-mode a {
+  color: black;
+}
+.light-mode footer h2,
+.light-mode footer h3,
+.light-mode footer h4,
+.light-mode footer p,
+.light-mode footer a {
+  color: white;
 }
 
 .dark-mode {
@@ -361,7 +380,8 @@ section {
 }
 
 h2 {
-  font-size: clamp(3rem, 2vw + 1rem, 4rem);
+  font-size: clamp(2rem, 2vw + 1rem, 4rem);
+  text-align: center;
 }
 
 h3 {
@@ -751,6 +771,133 @@ footer {
   align-items: center;
 }
 
+.selection h2 {
+  margin: 0;
+  align-self: end;
+}
+.selection .selection-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.selection .selection-container .selection-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0.15) 0%, rgba(217, 217, 217, 0) 100%);
+}
+.selection .selection-container .selection-card .selection-card-left {
+  width: 40%;
+}
+.selection .selection-container .selection-card .selection-card-left img {
+  width: 100%;
+  object-fit: cover;
+}
+.selection .selection-container .selection-card .selection-card-right h3 {
+  font-size: clamp(1rem, 0.75vw + 1rem, 1.6rem);
+}
+.selection .selection-container .selection-card .selection-card-right p {
+  font-size: clamp(1rem, 0.5vw + 1rem, 1.2rem);
+}
+.selection .selection-container .selection-card .selection-card-right a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #00965f;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.selection .selection-container .selection-card .selection-card-right a:hover {
+  background-color: #ff6900;
+}
+
+.simuler {
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0.15) 0%, rgba(217, 217, 217, 0) 100%);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.simuler h2 {
+  margin: 0;
+  align-self: end;
+}
+.simuler a {
+  color: #fff;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0.2) 0%, rgba(217, 217, 217, 0) 100%);
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  align-self: start;
+}
+.simuler a:hover {
+  color: #ff6900;
+  scale: 1.1;
+}
+.simuler .simuler-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+}
+.simuler .simuler-container .simuler-card {
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0.2) 0%, rgba(217, 217, 217, 0) 100%);
+}
+.simuler .simuler-container .simuler-card a {
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0.2) 0%, rgba(217, 217, 217, 0) 100%);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  align-self: center;
+}
+.simuler .simuler-container .simuler-card a:hover {
+  background: #ff6900;
+}
+
+.bot {
+  position: fixed;
+  top: 50%;
+  left: -10px;
+  z-index: 10000;
+  background-image: url("../../assets/images/Rectangle 22bot-container .svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 70px;
+  height: 140px;
+}
+.bot .bot-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bot .bot-container svg {
+  z-index: 100;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+.bot .bot-container svg:hover {
+  scale: 1.1;
+}
+.bot .bot-container svg:hover path {
+  fill: #ff6900;
+}
+
 .newsSwiper {
   width: 100%;
   height: 100%;
@@ -819,6 +966,7 @@ header {
   left: 50%;
   translate: -50%;
   width: 100%;
+  height: 10%;
   padding: 1.6rem;
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 18px 5px rgba(0, 150, 95, 0.31);
@@ -828,12 +976,12 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header .logo {
+header .logo-header {
   background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 1rem;
 }
-header .logo svg {
+header .logo-header svg {
   width: clamp(70%, 50vw, 100%);
 }
 header nav {

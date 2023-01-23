@@ -6,6 +6,7 @@ header {
   left: 50%;
   translate: -50%;
   width: 100%;
+  height: 10%;
   padding: 1.6rem;
   background-color: $clr-bg-header-dark;
   box-shadow: $shadow-header-dark;
@@ -16,9 +17,9 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  .logo {
+  .logo-header {
     background-color: transparentize($color: #fff, $amount: 0.4);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 1rem;
     svg {
       width: clamp(70%, 50vw, 100%);

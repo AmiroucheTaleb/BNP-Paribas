@@ -1,0 +1,57 @@
+@use "../abstracts/" as *;
+
+.simuler {
+  background: $clr-bg-linear-one;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    margin: 0;
+    align-self: end;
+  }
+
+  a {
+    color: $clr-text;
+    padding: 1rem 1.5rem;
+    background: $clr-bg-linear-two;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    align-self: start;
+
+    &:hover {
+      color: $clr-secondary;
+      scale: 1.1;
+    }
+  }
+
+  .simuler-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6rem;
+
+    .simuler-card {
+      padding: 2rem;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      background: $clr-bg-linear-two;
+
+      a {
+        background: $clr-bg-linear-two;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        align-self: center;
+
+        &:hover {
+          background: $clr-secondary;
+        }
+      }
+    }
+  }
+}

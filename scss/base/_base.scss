@@ -32,6 +32,29 @@ body {
 
 .light-mode {
   background-color: $clr-bg-light;
+  color: black;
+
+  svg path {
+    fill: black;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a {
+    color: black;
+  }
+
+  footer {
+    h2,
+    h3,
+    h4,
+    p,
+    a {
+      color: white;
+    }
+  }
 }
 
 .dark-mode {
@@ -48,7 +71,8 @@ section {
 }
 
 h2 {
-  font-size: clamp(3rem, 2vw + 1rem, 4rem);
+  font-size: clamp(2rem, 2vw + 1rem, 4rem);
+  text-align: center;
 }
 
 h3 {
