@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/images/bnp-icon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/bnp-icon.svg" type="image/x-icon">
 
     <!-- main css -->
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -239,6 +239,42 @@
 
             <button class="open-form">Ouvrir un compte en ligne</button>
         </div>
+
+        <form class="devenir-client-form">
+            <div class="devenir-client-form-container">
+                <div class="civilite">
+                    <label for="civilite">civilite <span>*</span></label>
+                    <select name="civilite" class="civilite-selection" aria-required="true" aria-invalid="false">
+                        <option value="M." selected="selected">M.</option>
+                        <option value="Mme">Mme</option>
+                        <option value="Mlle">Mlle</option>
+                    </select>
+                </div>
+                <div class="last-name">
+                    <label for="last-name">Nom <span>*</span></label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+                <div class="first-name">
+                    <label for="first-name">Prénom <span>*</span></label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="phone">
+                    <label for="phone">Portable <span>*</span></label>
+                    <input type="text" name="phone" id="phone" required placeholder="Votre numéro de tél fixe">
+                </div>
+                <div class="phone">
+                    <label for="fix-phone">Téléphone fixe</label>
+                    <input type="text" name="fix-phone" id="fix-phone" placeholder="Votre numéro de tél fixe">
+                </div>
+                <div class="mail">
+                    <label for="mail">E-mail</label>
+                    <input type="email" name="email" id="email">
+                </div>
+            </div>
+            <hr>
+            <small><span>*</span> Champs obligatoires</small>
+            <button type="submit" class="btn-submit">Suivant</button>
+        </form>
 
         <div class="down-container">
             <div class="down-container-card">

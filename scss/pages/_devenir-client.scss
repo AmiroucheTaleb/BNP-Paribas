@@ -8,7 +8,7 @@
   background-color: $clr-bg-dark;
   width: 100%;
   height: 100vh;
-
+  position: relative;
   padding-inline: 1rem;
 
   display: grid;
@@ -46,8 +46,12 @@
       box-shadow: 0 0 15px 0#FE790D;
       border: none;
       cursor: pointer;
-      transition: all 0.4s ease-in-out;
       margin-bottom: 2rem;
+      transition: box-shadow 0.4s ease-in-out, scale 0.4s ease-in-out;
+
+      @media only screen and (max-width: 720px) {
+        margin: 0;
+      }
 
       &:hover {
         scale: 1.2;
@@ -139,6 +143,80 @@
         text-align: center;
       }
     }
+  }
+
+  // form
+
+  .devenir-client-form {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 80%;
+    height: 60%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    box-shadow: 0 0 50px 0 #fe790d, 0 0 5px 0 #fe790d inset;
+    border-radius: 10px;
+    border: none;
+    margin: 0;
+
+    display: none;
+    .devenir-client-form-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      & div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & span {
+          color: $clr-secondary;
+        }
+      }
+
+      & input,
+      & select {
+        color: $clr-secondary;
+        border: solid 1px $clr-primary;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+      }
+    }
+
+    & small span {
+      color: $clr-secondary;
+    }
+
+    .btn-submit {
+      color: $clr-text;
+      cursor: pointer;
+      padding: 1rem 2rem;
+      background-color: #fe790d;
+      border-radius: 5px;
+      margin-top: 2rem;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        box-shadow: 0 0 50px 0 #fe790d;
+        scale: 1.2;
+      }
+    }
+  }
+}
+
+.btn-open-position {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  translate: -50%;
+
+  @media only screen and (max-width: 720px) {
+    bottom: 20px;
   }
 }
 
