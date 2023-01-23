@@ -11,7 +11,7 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../assets/css/main.css">
-    <script src="./assets/js/main.js"></script>
+    <script src="../assets/js/form-validation.js" defer></script>
     <title>Acces au compte</title>
 </head>
 
@@ -187,9 +187,9 @@
             <div class="left"></div>
             <div class="right">
                 <h2>ACCÉDER À VOTRE ESPACE CLIENT</h2>
-                <input maxlength="16" class="field" placeholder="Votre numéro client">
-                <input type="password" class="field" placeholder="Votre mot de passe">
-                <button class="btn">Valider</button>
+                <input id="num-input" type="text" maxlength="16" class="field" placeholder="Votre numéro client">
+                <input id="password" type="password" class="field" placeholder="Votre mot de passe">
+                <button id="btn-validation" class="btn">Valider</button>
                 <p class="pp">Si vous n'êtes pas client <a class="sub-link" href="">inscrivez-vous</a></p>
             </div>
         </div>
